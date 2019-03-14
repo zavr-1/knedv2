@@ -9,10 +9,10 @@ import { join } from 'path'
 import { processPhoto } from './upload'
 
 const {
-  'MONGO_URL': MONGO_URL,
-  'CDN': CDN = 'https://knedv.azureedge.net',
-  'STORAGE': STORAGE = 'knedv',
-  'TEMP': TEMP = 'upload',
+  MONGO_URL: MONGO_URL,
+  CDN: CDN = 'https://knedv.azureedge.net',
+  STORAGE: STORAGE = 'knedv',
+  TEMP: TEMP = 'upload',
 } = process.env
 
 let EP

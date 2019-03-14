@@ -24,7 +24,7 @@ export const processPhoto = async (exiftool, path, {
   const exifdata = {
     all: '',
     'Orientation#': Orientation,
-    CopyrightOwnerName: `knedv.ru`,
+    CopyrightOwnerName: 'knedv.ru',
     CopyrightYear: new Date().getFullYear(),
     Creator: 'Корпорация Недвижимости 21 Век',
     Comment: '+7 (495) 749-29-15',
@@ -63,7 +63,7 @@ export const processPhoto = async (exiftool, path, {
 // https://stackoverflow.com/a/43084142/1267201
 const getDate = (s) => {
   const [date, time] = s.split(' ')
-  const dateStr = date.replace(/:/g, "-")
+  const dateStr = date.replace(/:/g, '-')
   const properDateStr = dateStr + ' ' + time
   const d = new Date(properDateStr)
   return d
