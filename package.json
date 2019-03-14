@@ -1,0 +1,14 @@
+{
+  "name": "knedv2",
+  "version": "1.0.0",
+  "description": "The Azure Function For Linux Plan.",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "azure-storage": "^2.10.2",
+    "dist-exiftool": "10.53.0",
+    "node-exiftool": "2.3.0",
+    "sharp": "^0.21.3",
+    "shortid": "2.2.14"
+  }
+}
