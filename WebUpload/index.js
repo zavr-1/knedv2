@@ -1,7 +1,18 @@
 require('alamode')()
 const webUpload = require('./web-upload')
 
-module.exports = async (context, ...args) => {
+module.exports = async (context, req) => {
+  if (req.method == 'OPTIONS') {
+    context.log('OPTIONS REQUEST')
+    return {
+      status: 200,
+      headers: {
+        'Allow': 'OPTIONS, POST',
+        'Access-Control-Allow-Origin': context.req.headers.origin,
+        'Access-Control-Allow-Methods': 'POST, OPTIONS',
+      }
+    }
+  }
   let body, status = 200
   try {
     body = await webUpload(context, ...args)
@@ -9,11 +20,13 @@ module.exports = async (context, ...args) => {
     body = { error: err.message, stack: err.stack }
     status = 500
   }
-  context.res = {
+  return {
     status,
     body: JSON.stringify(body, null, 2),
     headers: {
-      'content-type': 'application/json',
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': context.req.headers.origin,
+      'Access-Control-Allow-Methods': 'POST, OPTIONS',
     },
   }
 }
