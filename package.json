@@ -5,9 +5,13 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "@wrote/wrote": "^1.2.1",
+    "alamode": "^1.8.4",
     "azure-storage": "^2.10.2",
     "dist-exiftool": "10.53.0",
+    "mongodb": "^3.1.13",
     "node-exiftool": "2.3.0",
+    "parse-multipart": "^1.0.4",
     "sharp": "^0.21.3",
     "shortid": "2.2.14"
   }
