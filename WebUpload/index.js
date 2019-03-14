@@ -1,7 +1,7 @@
 require('alamode')()
 const webUpload = require('./web-upload')
 
-module.exports = async (context, req) => {
+module.exports = async (context, ...args) => {
   if (req.method == 'OPTIONS') {
     context.log('OPTIONS REQUEST')
     return {
