@@ -89,3 +89,4 @@ local.settings.json
 dist
 out
 upload
+.vscode
