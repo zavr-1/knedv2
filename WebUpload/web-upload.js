@@ -6,6 +6,7 @@ import { createBlobServiceWithSas } from 'azure-storage'
 import { write, rm, ensurePath } from '@wrote/wrote'
 import { stringify } from 'querystring'
 import { join } from 'path'
+import spawn from 'spawncommand'
 import { processPhoto } from './upload'
 
 const {
@@ -24,6 +25,8 @@ export default async function (context, req) {
   if (req.method == 'GET') {
     if (req.body) req.body = req.body.slice(0, 100)
     if (req.rawBody) req.rawBody = req.rawBody.slice(0, 100)
+    const p = spawn('perl', ['-v'])
+    req.perl = await p.promise
     return req
   } else if (req.method == 'POST') {
     if (!storage) throw new Error('No storage.')
